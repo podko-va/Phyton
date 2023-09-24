@@ -1,0 +1,15 @@
+Максимум
+Найдите индексы первого вхождения максимального элемента в двумерном массиве.
+
+n, m = map(int, input().split())
+a = [list(map(int, input().split())) for i in range(n)]
+max_el = a[0][0]
+x = 0
+y = 0
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        max_el = max(max_el, a[i][j])
+#print(max_el)
+for row in a:
+  if max_el in row:
+    print(a.index(row),row.index(max_el))

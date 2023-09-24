@@ -1,0 +1,11 @@
+Шахматная доска
+заполнить в шахматном порядке
+
+n, m = map(int, input().split())
+a = [[(int)(((i%2 + j%2) != 1) ) for j in range(m)] for i in range(n)]
+#for i in range(1,n,2):
+#  a[i] = a[i][::-1]
+for row in a:
+  for elem in row:
+    print(elem, end=' ')
+  print()

@@ -1,0 +1,11 @@
+Поменять местами две диагонали
+Дан квадратный массив. Поменяйте местами в каждом столбце элементы, стоящие на главной и побочной диагонали.
+
+n = int(input())
+a = [list(map(int, input().split())) for i in range(n)]
+for i in range(n):
+    for j in range(n):
+      if i == j:
+        a[i][j],a[i][n-j-1] = a[i][n-j-1],a[i][j]
+for row in a:
+  print(''.join(str(row)))

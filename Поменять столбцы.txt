@@ -1,0 +1,25 @@
+Поменять столбцы
+Дан двумерный массив и два числа: i и j. Поменяйте в массиве столбцы с номерами i и j.
+
+n, m = map(int, input().split())
+a = [list(map(int, input().split())) for i in range(n)]
+ki, kj = map(int, input().split())
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        if j == min(ki,kj):
+          (a[i][j],a[i][max(ki,kj)]) = (a[i][max(ki,kj)],a[i][j])
+        
+for row in a:
+    for elem in row:
+        print(elem, end=' ')
+    print()
+
+--------------
+n, m = map(int, input().split())
+a = [list(map(int, input().split())) for i in range(n)]
+ki, kj = map(int, input().split())
+for i in range(n):
+    (a[i][ki],a[i][kj]) = (a[i][kj],a[i][ki])
+        
+for row in a:
+  print(''.join(str(row)))
